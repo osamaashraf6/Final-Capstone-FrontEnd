@@ -29,28 +29,48 @@ const Authentication = () => {
   };
 
   return (
-    <>
+    <div className="d-flex flex-column">
       {user ? (
         <>
           <p>
             Signed in as
+            <br />
             {user.email}
           </p>
-          <button type="button" onClick={handleSignOut}>
+          <button
+            className="btn btn-success"
+            type="button"
+            onClick={handleSignOut}
+          >
             Sign Out
           </button>
         </>
       ) : (
         <>
-          {register && <SignUpForm onSignIn={handleSignIn} />}
-          {!register && <SignInForm onSignIn={handleSignIn} />}
+          {register ? (
+            <>
+              <SignUpForm onSignIn={handleSignIn} />
+              <p className="mt-4 align-self-center">
+                Don&apos;t Have Account Yet?
+              </p>
+            </>
+          ) : (
+            <>
+              <SignInForm onSignIn={handleSignIn} />
+              <p className="mt-4 align-self-center">Already Have an Account?</p>
+            </>
+          )}
 
-          <button type="button" onClick={handleClick}>
+          <button
+            className="btn btn-success align-self-center"
+            type="button"
+            onClick={handleClick}
+          >
             {register ? 'Sign In' : 'Sign Up'}
           </button>
         </>
       )}
-    </>
+    </div>
   );
 };
 

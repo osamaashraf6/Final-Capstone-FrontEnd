@@ -10,6 +10,22 @@ const SignUpForm = ({ onSignIn }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!email) {
+      setError("Email can't be left blank");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password can't be less than 6 characters!");
+      return;
+    }
+
+    if (password !== passwordConfirmation) {
+      setError("Passwords don't match!");
+      return;
+    }
+
     try {
       await signUp(email, password, passwordConfirmation);
       onSignIn({ email });
@@ -20,29 +36,42 @@ const SignUpForm = ({ onSignIn }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        placeholder="email"
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        placeholder="password"
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <input
-        placeholder="password-confirmation"
-        type="password"
-        id="password-confirmation"
-        value={passwordConfirmation}
-        onChange={(e) => setPasswordConfirmation(e.target.value)}
-      />
+      <div className="form-outline mb-4">
+        <input
+          className="form-control"
+          placeholder="Email"
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="form-outline mb-4">
+        <input
+          className="form-control"
+          placeholder="Password"
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <div className="form-outline mb-4">
+        <input
+          className="form-control"
+          placeholder="Confirm password"
+          type="password"
+          id="password-confirmation"
+          value={passwordConfirmation}
+          onChange={(e) => setPasswordConfirmation(e.target.value)}
+        />
+      </div>
       {error && <p className="error">{error}</p>}
-      <button type="submit">Sign Up</button>
+      <div className="d-flex justify-content-center">
+        <button className="btn btn-success mb-4" type="submit">
+          Sign Up
+        </button>
+      </div>
     </form>
   );
 };

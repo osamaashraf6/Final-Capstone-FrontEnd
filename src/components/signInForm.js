@@ -19,23 +19,32 @@ const SignInForm = ({ onSignIn }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        placeholder="email"
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <input
-        placeholder="password"
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div className="form-outline mb-4">
+        <input
+          className="form-control"
+          placeholder="Email"
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="form-outline mb-4">
+        <input
+          className="form-control"
+          placeholder="Password"
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
       {error && <p className="error">{error}</p>}
-      <button type="submit">Sign In</button>
+      <div className="d-flex justify-content-center">
+        <button className="btn btn-success mb-4" type="submit">
+          Sign In
+        </button>
+      </div>
     </form>
   );
 };
