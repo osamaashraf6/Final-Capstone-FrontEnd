@@ -1,20 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-// eslint-disable-next-line import/extensions
-import Navbar from './components/Navbar/Navbar.js';
-// eslint-disable-next-line import/extensions
-import Home from './pages/Home.js';
-// eslint-disable-next-line import/extensions
-import Reserve from './pages/Reserve.js';
-// eslint-disable-next-line import/extensions
-import AddReserve from './pages/AddReserve.js';
-// import SignUp from './pages/SignOut.js';
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home';
+import Reserve from './pages/Reserve';
+import AddReserve from './pages/AddReserve';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// eslint-disable-next-line import/extensions
-import SignOut from './pages/SignOut.js';
-// eslint-disable-next-line import/extensions
-import HomeDetails from './components/Home/HomeDetails/HomeDetails.js';
+import SignOut from './pages/SignOut';
+import HomeDetails from './components/Home/HomeDetails/HomeDetails';
 
 function App() {
   return (
