@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SignOut from './pages/SignOut';
 import HomeDetails from './components/Home/HomeDetails/HomeDetails';
 
+
 function App() {
   return (
     <>
