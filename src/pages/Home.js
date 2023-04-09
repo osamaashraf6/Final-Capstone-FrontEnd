@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import HomeList from '../components/Home/HomeList';
+import HomeList from '../components/Home/HomeList/HomeList';
 
 function Home() {
   return (
