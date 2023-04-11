@@ -34,7 +34,13 @@ function HomeList() {
           {classes.map((swimClass) => (
             <div key={swimClass.id} className="class-item">
               <Link to={`/swimClass/${swimClass.id}`}>
-                <img src={swimClass.image} alt={swimClass.name} />
+                <img
+                  src={
+                    swimClass.image
+                    || 'https://i.postimg.cc/rmgZkkPK/havuz-izolasyonu.jpg'
+                  }
+                  alt={swimClass.name}
+                />
               </Link>
               <h4>{swimClass.name}</h4>
               <p>
