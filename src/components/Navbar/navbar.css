@@ -1,0 +1,47 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 1px solid #ccc;
+}
+
+nav img {
+  margin: 30px 0;
+}
+
+nav ul {
+  padding: 0;
+  margin-top: auto;
+  flex-grow: 1;
+}
+
+.link {
+  padding: 8px 0 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.link a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.link .active {
+  background-color: #97bf0f;
+  color: #fff;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 20px;
+  margin-bottom: 20px;
+}

@@ -1,31 +1,31 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import Home from './pages/Home';
-import Reserve from './pages/Reserve';
-import AddReserve from './pages/AddReserve';
+import Navbar from './components/navbar/navbar';
+import Home from './components/swimClass/classList';
+import ClassDetails from './components/swimClass/classDetails';
+import Reserve from './components/reserve/Reserve';
+import AddReserve from './components/reserve/AddReserve';
+import Authentication from './components/signup/authentication';
+
+// styles
 import './App.css';
+import './components/navbar/navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SignOut from './pages/SignOut';
-import HomeDetails from './components/Home/HomeDetails/HomeDetails';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          {/*  */}
-          <Route index element={<Home />} />
-          <Route path="Home" element={<Home />} />
-          <Route path="/swimClass/:id" element={<HomeDetails />} />
-          {/*  */}
-          <Route path="Reserve" element={<Reserve />} />
-          {/*  */}
-          <Route path="SignUp" element={<SignOut />} />
-          {/*  */}
-          <Route path="AddReserve" element={<AddReserve />} />
-          {/*  */}
-        </Routes>
+        <div className="main">
+          <Navbar />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="home" element={<Home />} />
+            <Route path="swimClass/:id" element={<ClassDetails />} />
+            <Route path="reserve" element={<Reserve />} />
+            <Route path="addReserve" element={<AddReserve />} />
+            <Route path="signup" element={<Authentication />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </>
   );

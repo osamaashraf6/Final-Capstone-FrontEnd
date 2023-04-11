@@ -4,7 +4,7 @@ import SignInForm from './signInForm';
 
 const Authentication = () => {
   const [user, setUser] = useState(null);
-  const [register, setRegister] = useState(false);
+  const [register, setRegister] = useState(true);
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -50,14 +50,14 @@ const Authentication = () => {
           {register ? (
             <>
               <SignUpForm onSignIn={handleSignIn} />
-              <p className="mt-4 align-self-center">
-                Don&apos;t Have Account Yet?
-              </p>
+              <p className="mt-4 align-self-center">Already Have an Account?</p>
             </>
           ) : (
             <>
               <SignInForm onSignIn={handleSignIn} />
-              <p className="mt-4 align-self-center">Already Have an Account?</p>
+              <p className="mt-4 align-self-center">
+                Don&apos;t Have Account Yet?
+              </p>
             </>
           )}
 

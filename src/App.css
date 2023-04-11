@@ -10,3 +10,12 @@ body {
 .error {
   color: red;
 }
+
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+img {
+  width: 200px;
+}
