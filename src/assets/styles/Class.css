@@ -1,0 +1,24 @@
+.swim_classes-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 3.5rem 1rem;
+}
+
+.class-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.class-title h1 {
+  align-self: center;
+  letter-spacing: 5px;
+  color: var(--dark-gray);
+}
+
+.class-card {
+  padding: 1.5rem;
+}

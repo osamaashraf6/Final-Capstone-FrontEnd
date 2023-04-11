@@ -1,0 +1,60 @@
+.class-details-section {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 45% 25% 30%;
+  padding: 3rem 2rem;
+  place-content: center;
+}
+
+.details-img img {
+  width: 100%;
+  filter: drop-shadow(0 0 0.75rem var(--dark-gray));
+  border-radius: 10px;
+}
+
+.details-info {
+  padding: 0 1rem;
+}
+
+.fee {
+  background-color: var(--lime);
+  color: var(--white);
+  font-weight: 700;
+  text-shadow: 1px 1px 2px var(--black);
+  border-radius: 5em;
+  padding: 3px;
+  text-align: center;
+}
+
+.details-buttons-form {
+  padding: 0 1rem;
+}
+
+.book-form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.details-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .class-details-section {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 25% 45%;
+    padding: 3rem 2rem;
+    place-content: center;
+    gap: 1rem;
+  }
+
+  .book-form {
+    width: 100%;
+  }
+}
