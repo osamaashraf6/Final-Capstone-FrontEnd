@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,17 +14,13 @@ function HomeList() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevSlide = () => {
-    if (currentIndex == 0) return;
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? classes.length - 1 : prevIndex - 1
-    );
+    if (currentIndex === 0) return;
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? classes.length - 1 : prevIndex - 1));
   };
 
   const goToNextSlide = () => {
-    if (currentIndex == Math.floor((classes.length - 1) / 2)) return;
-    setCurrentIndex((prevIndex) =>
-      prevIndex === classes.length - 1 ? 0 : prevIndex + 1
-    );
+    if (currentIndex === Math.floor((classes.length - 1) / 2)) return;
+    setCurrentIndex((prevIndex) => (prevIndex === classes.length - 1 ? 0 : prevIndex + 1));
   };
 
   return (
@@ -43,18 +38,25 @@ function HomeList() {
               </Link>
               <h4>{swimClass.name}</h4>
               <p>
-                {
-                  '* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *'
-                }
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                * *
               </p>
               <p>{swimClass.description}</p>
             </div>
           ))}
         </ul>
-        <button className="carousel-prev-btn" onClick={goToPrevSlide}>
+        <button
+          type="button"
+          className="carousel-prev-btn"
+          onClick={goToPrevSlide}
+        >
           &#8249;
         </button>
-        <button className="carousel-next-btn" onClick={goToNextSlide}>
+        <button
+          type="button"
+          className="carousel-next-btn"
+          onClick={goToNextSlide}
+        >
           &#8250;
         </button>
       </div>

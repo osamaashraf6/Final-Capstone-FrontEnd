@@ -3,6 +3,7 @@
   overflow: hidden;
   margin-top: 100px;
 }
+
 .class-item {
   flex-shrink: 0;
   scroll-snap-align: start;
