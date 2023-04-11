@@ -8,7 +8,7 @@ function HomeList() {
     fetch('http://127.0.0.1:3000/swim_classes')
       .then((response) => response.json())
       .then((data) => setClasses(data))
-      .catch((error) => console.error(error));
+      .catch((error) => error);
   }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,17 +31,23 @@ function HomeList() {
           className="carousel-list"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {classes.map((swimClass) => (
-            <div key={swimClass.id} className="class-item">
-              <Link to={`/swimClass/${swimClass.id}`}>
-                <img src={swimClass.image} alt={swimClass.name} />
+          {classes.map((item) => (
+            <div key={item.id} className="class-item">
+              <Link to={`/swimClass/${item.id}`}>
+                <img
+                  src={
+                    item.image
+                    || 'https://i.postimg.cc/rmgZkkPK/havuz-izolasyonu.jpg"'
+                  }
+                  alt=""
+                />
               </Link>
-              <h4>{swimClass.name}</h4>
+              <h4>{item.name}</h4>
               <p>
                 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
                 * *
               </p>
-              <p>{swimClass.description}</p>
+              <p>{item.description}</p>
             </div>
           ))}
         </ul>
