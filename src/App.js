@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/navbar';
 import Home from './components/swimClass/classList';
 import ClassDetails from './components/swimClass/classDetails';
-import Reserve from './components/reserve/Reserve';
-import AddReserve from './components/reserve/AddReserve';
+import Reserve from './components/reserve/reserve';
+import AddReserve from './components/reserve/addReserve';
 import Authentication from './components/signup/authentication';
 
 // styles
