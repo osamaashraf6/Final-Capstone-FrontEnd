@@ -2,6 +2,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  min-width: 20vw;
   border-right: 1px solid #ccc;
 }
 
@@ -44,4 +45,8 @@ nav ul {
   width: 90%;
   gap: 20px;
   margin-bottom: 20px;
+}
+
+nav p {
+  margin-left: 10px;
 }

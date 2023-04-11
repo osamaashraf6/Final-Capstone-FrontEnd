@@ -9,6 +9,7 @@ import Authentication from './components/signup/authentication';
 // styles
 import './App.css';
 import './components/navbar/navbar.css';
+import './components/swimClass/swimClass.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route index element={<Home />} />
-            <Route path="home" element={<Home />} />
+            <Route path="swimClass" element={<Home />} />
             <Route path="swimClass/:id" element={<ClassDetails />} />
             <Route path="reserve" element={<Reserve />} />
             <Route path="addReserve" element={<AddReserve />} />
