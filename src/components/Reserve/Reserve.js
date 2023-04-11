@@ -1,13 +1,5 @@
-import React, { Fragment } from 'react';
-
-function Reservee() {
-  return (
-    <>
-      <div className="">
-        Reservee
-      </div>
-    </>
-  );
+function Reserve() {
+  return <div>Reserve</div>;
 }
 
-export default Reservee;
+export default Reserve;

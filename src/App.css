@@ -10,3 +10,13 @@ body {
 .error {
   color: red;
 }
+
+.main {
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  width: 200px;
+}
