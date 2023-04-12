@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/navbar';
 import Home from './components/swimClass/classList';
+import ClassCreate from './components/swimClass/createClass';
 import ClassDetails from './components/swimClass/classDetails';
 import Reserve from './components/reserve/reserve';
 import AddReserve from './components/reserve/addReserve';
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path="swimClass" element={<Home />} />
+            <Route path="swimClass/create" element={<ClassCreate />} />
             <Route path="swimClass/:id" element={<ClassDetails />} />
             <Route path="reserve" element={<Reserve />} />
             <Route path="addReserve" element={<AddReserve />} />
