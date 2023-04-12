@@ -12,7 +12,7 @@ const AddReserve = () => {
   const { status } = useSelector((state) => state.bookings);
 
   const dispatch = useDispatch();
-  // const idUser = JSON.parse(localStorage.getItem('user')).id;
+  //const idUser = JSON.parse(localStorage.getItem('user')).id;
   let message = '';
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const AddReserve = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setCar(idToUse);
+    //setClass(idToUse);
     const data = {
       booking: {
         start_time: bookingDate,
