@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path="swimClass" element={<Home />} />
-            <Route path="swimClass/create" element={<ClassCreate />} />
+            <Route path="add-class" element={<ClassCreate />} />
             <Route path="swimClass/:id" element={<ClassDetails />} />
             <Route path="reserve" element={<Reserve />} />
             <Route path="addReserve" element={<AddReserve />} />

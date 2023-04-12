@@ -12,7 +12,7 @@ const AddReserve = () => {
   const { status } = useSelector((state) => state.bookings);
 
   const dispatch = useDispatch();
-  //const idUser = JSON.parse(localStorage.getItem('user')).id;
+  const idUser = JSON.parse(localStorage.getItem('user')).id;
   let message = '';
 
   useEffect(() => {
@@ -25,16 +25,15 @@ const AddReserve = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //setClass(idToUse);
     const data = {
       booking: {
         start_time: bookingDate,
         end_time: bookingDateEnd,
         swim_class_id: idToUse,
       },
-      // user: {
-      // user_id: idUser,
-      // },
+      user: {
+        user_id: idUser,
+      },
     };
     dispatch(postBooking(data));
   };

@@ -19,7 +19,7 @@ const ClassCreate = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const classData = {
-      class_name: className,
+      name: className,
       location: classLocation,
       fee: classFee,
       image: classImage,
@@ -31,7 +31,7 @@ const ClassCreate = () => {
 
   const handleRedirect = () => {
     if (status === 'success' && postStatus === 'success') {
-      navigate('/classList');
+      navigate('/swimClass');
     }
   };
 
