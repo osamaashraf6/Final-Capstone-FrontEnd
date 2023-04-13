@@ -1,20 +1,38 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function HomeList() {
+function ClassList() {
   const [classes, setClasses] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:3000/swim_classes')
+    fetch('http://localhost:3000/swim_classes')
       .then((response) => response.json())
       .then((data) => setClasses(data));
-  }, []);
-
-  const [currentIndex, setCurrentIndex] = useState(0);
+  }, [classes]);
 
   const goToPrevSlide = () => {
     if (currentIndex === 0) return;
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? classes.length - 1 : prevIndex - 1));
+  };
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3000/swim_classes/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('SwimClass deleted successfully');
+        } else {
+          console.error('Failed to delete SwimClass:', response.status);
+        }
+      })
+      .catch((error) => {
+        console.error('Error deleting SwimClass:', error);
+      });
   };
 
   const goToNextSlide = () => {
@@ -47,6 +65,13 @@ function HomeList() {
                 * *
               </p>
               <p>{swimClass.description}</p>
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={() => handleDelete(swimClass.id)}
+              >
+                Delete class
+              </button>
             </div>
           ))}
         </ul>
@@ -68,4 +93,4 @@ function HomeList() {
     </div>
   );
 }
-export default HomeList;
+export default ClassList;
