@@ -58,3 +58,7 @@
   padding: 10px;
   width: 200px;
 }
+
+.btn-success {
+  background-color: #97bf0f !important;
+}
