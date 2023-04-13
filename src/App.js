@@ -1,6 +1,5 @@
-/* eslint-disable import/extensions */
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/navbar/navbar';
+import Navbar from './components/Navbar/Navbar';
 import Home from './components/swimClass/classList';
 import ClassCreate from './components/swimClass/createClass';
 import ClassDetails from './components/swimClass/classDetails';
@@ -10,7 +9,7 @@ import Authentication from './components/signup/authentication';
 
 // styles
 import './App.css';
-import './components/navbar/navbar.css';
+import './components/Navbar/navbar.css';
 import './components/swimClass/swimClass.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -29,47 +29,54 @@ const Authentication = () => {
   };
 
   return (
-    <div className="d-flex flex-column">
-      {user ? (
-        <>
-          <p>
-            Signed in as
-            <br />
-            {user.email}
-          </p>
-          <button
-            className="btn btn-success"
-            type="button"
-            onClick={handleSignOut}
-          >
-            Sign Out
-          </button>
-        </>
-      ) : (
-        <>
-          {register ? (
-            <>
-              <SignUpForm onSignIn={handleSignIn} />
-              <p className="mt-4 align-self-center">Already Have an Account?</p>
-            </>
-          ) : (
-            <>
-              <SignInForm onSignIn={handleSignIn} />
-              <p className="mt-4 align-self-center">
-                Don&apos;t Have Account Yet?
-              </p>
-            </>
-          )}
+    <div className="container">
+      <h3 className="m-4">
+        {(user && 'Thanks for joining in!') || 'Join our community.'}
+      </h3>
+      <div className="d-flex flex-column">
+        {user ? (
+          <>
+            <p>
+              Signed in as
+              <br />
+              {user.email}
+            </p>
+            <button
+              className="btn btn-success"
+              type="button"
+              onClick={handleSignOut}
+            >
+              Sign Out
+            </button>
+          </>
+        ) : (
+          <>
+            {register ? (
+              <>
+                <SignUpForm onSignIn={handleSignIn} />
+                <p className="mt-4 align-self-center">
+                  Already Have an Account?
+                </p>
+              </>
+            ) : (
+              <>
+                <SignInForm onSignIn={handleSignIn} />
+                <p className="mt-4 align-self-center">
+                  Don&apos;t Have Account Yet?
+                </p>
+              </>
+            )}
 
-          <button
-            className="btn btn-success align-self-center"
-            type="button"
-            onClick={handleClick}
-          >
-            {register ? 'Sign In' : 'Sign Up'}
-          </button>
-        </>
-      )}
+            <button
+              className="btn btn-success align-self-center"
+              type="button"
+              onClick={handleClick}
+            >
+              {register ? 'Sign In' : 'Sign Up'}
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 };
