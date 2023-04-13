@@ -13,9 +13,12 @@ const Authentication = () => {
     }
   }, []);
 
-  const handleSignIn = (userData) => {
-    localStorage.setItem('user', JSON.stringify(userData));
-    setUser(userData);
+  const handleSignIn = async (userData) => {
+    const res = await fetch('http://localhost:3000/users');
+    const users = await res.json();
+    const newUser = users.filter((user) => user.email === userData.email);
+    localStorage.setItem('user', JSON.stringify(newUser[0]));
+    setUser(newUser[0]);
   };
 
   const handleSignOut = () => {
