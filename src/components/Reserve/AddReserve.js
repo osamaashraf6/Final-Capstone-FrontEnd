@@ -1,80 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { postBooking, setStatus } from '../../redux/bookings/bookings';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getBookings } from '../../redux/bookings/bookings';
+import '../../assets/styles/addReserve.css';
 
-const AddReserve = () => {
-  const [bookingDate, setBookingDate] = useState('');
-  const [bookingDateEnd, setBookingDateEnd] = useState('');
-
-  const { id } = useParams();
-  const idToUse = Number(id);
-  const { status } = useSelector((state) => state.bookings);
-
+function AddReservation() {
   const dispatch = useDispatch();
-  const idUser = JSON.parse(localStorage.getItem('user')).id;
-  let message = '';
+  const [date] = useState('');
+  const { id } = useParams();
 
-  useEffect(() => {
-    dispatch(setStatus());
-  });
+  const idToUse = Number(id);
+  const navigate = useNavigate();
 
-  if (status === 'success') {
-    message = <h3>Booking Created</h3>;
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = {
-      booking: {
-        start_time: bookingDate,
-        end_time: bookingDateEnd,
+  const createReserve = (event) => {
+    event.preventDefault();
+    dispatch(
+      getBookings({
+        date,
         swim_class_id: idToUse,
-      },
-      user: {
-        user_id: idUser,
-      },
-    };
-    dispatch(postBooking(data));
+      })
+    );
+    navigate('/reservations');
   };
+  return (
+    <div className="add-reserve">
+      <div className="r_container">
+        <h1 className="title">Reserve a Class</h1>
+        <hr className="hr" />
+        <p className="about-class">
+          ATO swim classes are available for infants, children, teens, and
+          adults. And regardless of where you take your swimming lessons, you
+          can expect caring, patient, and safe instruction from trained,
+          professional instructors who can help even the most timid of swimmers
+          learn to enjoy the water. Every beginner class starts with the basics,
+          like becoming comfortable in the water and learning safety and basic
+          strokes, then moves on to stroke development, refinement and
+          improvement, then developing ease and efficiency in the water. In
+          addition to Red Cross swimming classes, we also have a free app that
+          can help you stay motivated between classes and progress to the next
+          level.
+        </p>
 
-  const screen = (
-    <form className="book-form" onSubmit={handleSubmit}>
-      <div className="label">
-        <span>From:</span>
-        <input
-          id="date-"
-          type="date"
-          placeholder="start date"
-          name="bookingDate"
-          className="form-input"
-          value={bookingDate}
-          onChange={(e) => setBookingDate(e.target.value)}
-          required
-        />
+        <form className="reserve-form mt-5 pt-5" onSubmit={createReserve}>
+          <input type="text" placeholder="City" id="city" name="city" />
+          <button className="btn" id="btn" type="submit">
+            Reserve
+          </button>
+        </form>
       </div>
-
-      <div className="label">
-        <span>To:</span>
-        <input
-          id="date-end"
-          type="date"
-          placeholder="end date"
-          name="bookingDateEnd"
-          className="form-input"
-          value={bookingDateEnd}
-          onChange={(e) => setBookingDateEnd(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit" className="form-button button">
-        Book
-      </button>
-      {message}
-    </form>
+    </div>
   );
+}
 
-  return screen;
-};
-
-export default AddReserve;
+export default AddReservation;
