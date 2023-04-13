@@ -5,7 +5,7 @@ import Home from './components/swimClass/classList';
 import ClassCreate from './components/swimClass/createClass';
 import ClassDetails from './components/swimClass/classDetails';
 import Reserve from './components/reserve/reserve';
-import AddReserve from './components/reserve/addReserve';
+import AddReservation from './components/reserve/addReserve';
 import Authentication from './components/signup/authentication';
 
 // styles
@@ -26,7 +26,7 @@ function App() {
             <Route path="add-class" element={<ClassCreate />} />
             <Route path="swimClass/:id" element={<ClassDetails />} />
             <Route path="reserve" element={<Reserve />} />
-            <Route path="addReserve" element={<AddReserve />} />
+            <Route path="addReserve" element={<AddReservation />} />
             <Route path="signup" element={<Authentication />} />
           </Routes>
         </div>
