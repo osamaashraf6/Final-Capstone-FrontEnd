@@ -20,7 +20,6 @@ function AddReservation() {
       alert('Please Sign In or Sign Up First');
       navigate('/signup');
     } else {
-      console.log(user, id);
       try {
         fetch('http://localhost:3000/bookings', {
           method: 'POST',
@@ -39,7 +38,6 @@ function AddReservation() {
     <div className="add-reserve">
       <div className="r_container">
         <h1 className="title">Reserve a Class</h1>
-        <hr className="hr" />
         <p className="about-class">
           ATO swim classes are available for infants, children, teens, and
           adults. And regardless of where you take your swimming lessons, you

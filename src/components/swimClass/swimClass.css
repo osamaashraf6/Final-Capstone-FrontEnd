@@ -45,3 +45,16 @@
 .carousel-next-btn {
   right: 60px;
 }
+
+.item-details img {
+  width: 500px;
+}
+
+.details {
+  margin-left: 200px;
+}
+
+.details div {
+  padding: 10px;
+  width: 200px;
+}
