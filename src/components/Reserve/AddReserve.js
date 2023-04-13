@@ -1,12 +1,8 @@
-/* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { getBookings } from '../../redux/bookings/bookings';
 import '../../assets/styles/addReserve.css';
 
 function AddReservation() {
-  // const dispatch = useDispatch();
   const [user, setUser] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
