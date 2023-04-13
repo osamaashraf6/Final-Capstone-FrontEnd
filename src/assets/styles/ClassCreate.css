@@ -1,7 +1,5 @@
 .create-section {
-  margin: 30px auto;
   width: 80%;
-  background-color: white;
   border-radius: 1rem;
   box-shadow: 0 3px 6px -2px black;
   color: var(--black);
@@ -10,11 +8,12 @@
   gap: 1rem;
   padding: 1.5rem;
   background-color: #97bf0f;
+  margin: 0 5px;
 }
 
 .create-section h1 {
   align-items: center;
-  background-color: #fff;
+  background-color: #97bf0f;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -22,7 +21,7 @@
 
 .form-container {
   align-items: center;
-  background-color: #fff;
+  background-color: #97bf0f;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
