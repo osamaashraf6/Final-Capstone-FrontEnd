@@ -1,7 +1,6 @@
 .create-section {
   margin: 30px auto;
   width: 80%;
-  max-width: 500px;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 3px 6px -2px black;
@@ -10,6 +9,7 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
+  background-color: #97bf0f;
 }
 
 .create-section h1 {

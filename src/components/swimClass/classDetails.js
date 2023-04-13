@@ -1,9 +1,8 @@
-/* eslint camelcase: "off" */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router';
 import { deleteClass, getSwimClasses } from '../../redux/swimClass/swimClass';
-import AddReserve from '../reserve/addReserve';
+import AddReserve from '../Reserve/AddReserve';
 // import '../../assets/styles/ClassDetails.css';
 
 const ClassDetails = () => {
