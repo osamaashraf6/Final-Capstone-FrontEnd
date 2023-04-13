@@ -19,7 +19,7 @@ function AddReservation() {
       getBookings({
         date,
         swim_class_id: idToUse,
-      })
+      }),
     );
     navigate('/reservations');
   };
