@@ -1,28 +1,44 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { getBookings } from '../../redux/bookings/bookings';
+// import { useDispatch } from 'react-redux';
+// import { getBookings } from '../../redux/bookings/bookings';
 import '../../assets/styles/addReserve.css';
 
 function AddReservation() {
-  const dispatch = useDispatch();
-  const [date] = useState('');
+  // const dispatch = useDispatch();
+  const [user, setUser] = useState(null);
   const { id } = useParams();
-
-  const idToUse = Number(id);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   const createReserve = (event) => {
     event.preventDefault();
-    dispatch(
-      getBookings({
-        date,
-        swim_class_id: idToUse,
-      }),
-    );
-    navigate('/reservations');
+    if (!user) {
+      alert('Please Sign In or Sign Up First');
+      navigate('/signup');
+    } else {
+      console.log(user, id);
+      try {
+        fetch('http://localhost:3000/bookings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ user_id: user.id, swim_class_id: id }),
+        });
+      } catch (error) {
+        console.error('Failed to create user', error);
+      }
+    }
   };
+
   return (
     <div className="add-reserve">
       <div className="r_container">
