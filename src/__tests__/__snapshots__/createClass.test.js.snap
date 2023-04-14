@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="create-section"
+>
+  <h1>
+    Create a class
+  </h1>
+  <form
+    className="form-container"
+    onSubmit={[Function]}
+  >
+    <input
+      className="form-input"
+      name="className"
+      onChange={[Function]}
+      placeholder="Class name"
+      required={true}
+      type="text"
+      value=""
+    />
+    <input
+      className="form-input"
+      name="classLocation"
+      onChange={[Function]}
+      placeholder="Location"
+      required={true}
+      type="text"
+      value=""
+    />
+    <input
+      className="form-input"
+      name="classDescription"
+      onChange={[Function]}
+      placeholder="description"
+      required={true}
+      type="text"
+      value=""
+    />
+    <input
+      className="form-input"
+      name="classFee"
+      onChange={[Function]}
+      placeholder="fee"
+      required={true}
+      type="number"
+      value=""
+    />
+    <button
+      className="form-button button"
+      type="submit"
+    >
+      Create Class
+    </button>
+  </form>
+</section>
+`;
