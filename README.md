@@ -32,7 +32,7 @@
 
 ## Live version
 
-- [In progress]
+- [Live Demo](https://swimming.onrender.com/)
 
 ## Built With
 - HTML
