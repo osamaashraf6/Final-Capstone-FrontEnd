@@ -11,7 +11,7 @@ it('renders correctly', () => {
         <Router>
           <ClassCreate />
         </Router>
-      </Provider>
+      </Provider>,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
