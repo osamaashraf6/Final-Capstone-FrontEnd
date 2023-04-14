@@ -14,7 +14,7 @@ const Authentication = () => {
   }, []);
 
   const handleSignIn = async (userData) => {
-    const res = await fetch('http://localhost:3000/users');
+    const res = await fetch('https://rails-wout.onrender.com/users');
     const users = await res.json();
     const newUser = users.filter((user) => user.email === userData.email);
     localStorage.setItem('user', JSON.stringify(newUser[0]));

@@ -21,7 +21,7 @@ const AddReservation = () => {
       navigate('/signup');
     } else {
       try {
-        fetch('http://localhost:3000/bookings', {
+        fetch('https://rails-wout.onrender.com/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
