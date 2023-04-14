@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { postClass, getSwimClasses } from '../../redux/swimClass/swimClass';
 import '../../assets/styles/ClassCreate.css';
@@ -12,8 +12,6 @@ const ClassCreate = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { status } = useSelector((state) => state.swimClasses);
-  const { postStatus } = useSelector((state) => state.swimClasses);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,12 +23,7 @@ const ClassCreate = () => {
     };
     dispatch(postClass(classData));
     dispatch(getSwimClasses());
-  };
-
-  const handleRedirect = () => {
-    if (status === 'success' && postStatus === 'success') {
-      navigate('/swimClass');
-    }
+    navigate('/swimClass');
   };
 
   const screen = (
@@ -41,7 +34,6 @@ const ClassCreate = () => {
           className="form-container"
           onSubmit={(e) => {
             handleSubmit(e);
-            setTimeout(() => handleRedirect(), 3000);
           }}
         >
           <input

@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function ClassDetails() {
+const ClassDetails = () => {
   const [item, setItem] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -55,6 +55,6 @@ function ClassDetails() {
       </button>
     </div>
   );
-}
+};
 
 export default ClassDetails;

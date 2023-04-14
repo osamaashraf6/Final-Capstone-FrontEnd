@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../../assets/styles/addReserve.css';
 
-function AddReservation() {
+const AddReservation = () => {
   const [user, setUser] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -62,6 +62,6 @@ function AddReservation() {
       </div>
     </div>
   );
-}
+};
 
 export default AddReservation;

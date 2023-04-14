@@ -13,28 +13,26 @@ import './components/Navbar/navbar.css';
 import './components/swimClass/swimClass.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <div className="main">
-          <Navbar />
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="swimClass" element={<Home />} />
-            <Route path="add-class" element={<ClassCreate />} />
-            <Route path="swimClass/:id" element={<ClassDetails />} />
-            <Route path="reservations" element={<Bookings />} />
-            <Route
-              path="swimClass/:id/addReserve"
-              element={<AddReservation />}
-            />
-            <Route path="signup" element={<Authentication />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </>
-  );
-}
+const App = () => (
+  <>
+    <BrowserRouter>
+      <div className="main">
+        <Navbar />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="swimClass" element={<Home />} />
+          <Route path="add-class" element={<ClassCreate />} />
+          <Route path="swimClass/:id" element={<ClassDetails />} />
+          <Route path="reservations" element={<Bookings />} />
+          <Route
+            path="swimClass/:id/addReserve"
+            element={<AddReservation />}
+          />
+          <Route path="signup" element={<Authentication />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  </>
+);
 
 export default App;

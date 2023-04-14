@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function ClassList() {
+const ClassList = () => {
   const [classes, setClasses] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -9,7 +9,7 @@ function ClassList() {
     fetch('http://localhost:3000/swim_classes')
       .then((response) => response.json())
       .then((data) => setClasses(data));
-  }, [classes]);
+  }, [currentIndex]);
 
   const goToPrevSlide = () => {
     if (currentIndex === 0) return;
@@ -26,6 +26,7 @@ function ClassList() {
       .then((response) => {
         if (response.ok) {
           console.log('SwimClass deleted successfully');
+          setCurrentIndex(0);
         } else {
           console.error('Failed to delete SwimClass:', response.status);
         }
@@ -92,5 +93,5 @@ function ClassList() {
       </div>
     </div>
   );
-}
+};
 export default ClassList;
