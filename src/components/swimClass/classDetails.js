@@ -30,7 +30,10 @@ const ClassDetails = () => {
           />
           <div className="details">
             <h3>{item.name}</h3>
-            <div className="bg-light">${item.fee}</div>
+            <div className="bg-light">
+              $
+              {item.fee}
+            </div>
             <div>{item.location}</div>
             <div className="bg-light">
               {item.booked ? 'Booked' : 'Not Booked Yet'}
