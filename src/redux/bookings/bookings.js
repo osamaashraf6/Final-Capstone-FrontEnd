@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const getBookings = createAsyncThunk(
   'bookings/getBookings',
   async () => {
-    const response = await fetch('http://127.0.0.1:3000/bookings', {
+    const response = await fetch('https://rails-wout.onrender.com/bookings', {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -13,12 +13,12 @@ export const getBookings = createAsyncThunk(
     });
     const bookings = await response.json();
     return bookings;
-  },
+  }
 );
 export const postBooking = createAsyncThunk(
   'bookings/postBooking',
   async (data) => {
-    const response = await fetch('http://127.0.0.1:3000/bookings', {
+    const response = await fetch('https://rails-wout.onrender.com/bookings', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -28,7 +28,7 @@ export const postBooking = createAsyncThunk(
     });
     const reservations = await response.json();
     return reservations;
-  },
+  }
 );
 
 export const bookingsSlice = createSlice({
