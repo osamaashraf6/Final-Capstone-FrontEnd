@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const getBookings = createAsyncThunk(
   'bookings/getBookings',
   async () => {
-    const response = await fetch('http://127.0.0.1:3000/bookings{id}', {
+    const response = await fetch('http://127.0.0.1:3000/bookings', {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

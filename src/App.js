@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/swimClass/classList';
 import ClassCreate from './components/swimClass/createClass';
 import ClassDetails from './components/swimClass/classDetails';
-import Reserve from './components/Reserve/Reserve';
+import Bookings from './components/Reserve/Reserve';
 import AddReservation from './components/Reserve/AddReserve';
 import Authentication from './components/signup/authentication';
 
@@ -24,7 +24,7 @@ function App() {
             <Route path="swimClass" element={<Home />} />
             <Route path="add-class" element={<ClassCreate />} />
             <Route path="swimClass/:id" element={<ClassDetails />} />
-            <Route path="reserve" element={<Reserve />} />
+            <Route path="reservations" element={<Bookings />} />
             <Route
               path="swimClass/:id/addReserve"
               element={<AddReservation />}
