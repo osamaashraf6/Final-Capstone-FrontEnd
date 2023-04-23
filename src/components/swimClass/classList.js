@@ -10,9 +10,7 @@ const ClassList = () => {
   useEffect(() => {
     fetch('https://rails-wout.onrender.com/swim_classes')
       .then((response) => response.json())
-      .then((data) => {
-        setClasses(data);
-      });
+      .then((data) => setClasses(data));
   }, [currentIndex, count]);
 
   const goToPrevSlide = () => {
