@@ -46,6 +46,7 @@ const ClassList = () => {
     setCurrentIndex((prevIndex) => (prevIndex === classes.length - 1 ? 0 : prevIndex + 1));
   };
 
+  console.log(classes);
   return (
     <div className="container">
       <h2 className="text-center mt-5">Welcome to Swimming Class</h2>
