@@ -18,7 +18,9 @@ const ClassList = () => {
 
   const goToPrevSlide = () => {
     if (currentIndex === 0) return;
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? classes.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? classes.length - 1 : prevIndex - 1
+    );
   };
 
   const handleDelete = (id) => {
@@ -43,7 +45,9 @@ const ClassList = () => {
 
   const goToNextSlide = () => {
     if (currentIndex === Math.floor((classes.length - 1) / 2)) return;
-    setCurrentIndex((prevIndex) => (prevIndex === classes.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === classes.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -53,7 +57,7 @@ const ClassList = () => {
       {classes && classes.length === 0 && (
         <Loading message="You have no swimming classes yet!" />
       )}
-      {classes && (
+      {classes && classes.length !== 0 && (
         <div className="carousel-container">
           <ul
             className="carousel-list"
@@ -64,8 +68,8 @@ const ClassList = () => {
                 <Link to={`/swimClass/${swimClass.id}`}>
                   <img
                     src={
-                      swimClass.image
-                      || 'https://i.postimg.cc/rmgZkkPK/havuz-izolasyonu.jpg'
+                      swimClass.image ||
+                      'https://i.postimg.cc/rmgZkkPK/havuz-izolasyonu.jpg'
                     }
                     alt={swimClass.name}
                   />
