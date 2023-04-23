@@ -5,16 +5,15 @@ import Loading from '../loading';
 const ClassList = () => {
   const [classes, setClasses] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const arr = [];
     fetch('https://rails-wout.onrender.com/swim_classes')
       .then((response) => response.json())
       .then((data) => {
-        arr.push(data);
-        setClasses(arr);
+        setClasses(data);
       });
-  }, [currentIndex]);
+  }, [currentIndex, count]);
 
   const goToPrevSlide = () => {
     if (currentIndex === 0) return;
@@ -32,6 +31,7 @@ const ClassList = () => {
         if (response.ok) {
           console.log('SwimClass deleted successfully');
           setCurrentIndex(0);
+          setCount(classes.length);
         } else {
           console.error('Failed to delete SwimClass:', response.status);
         }
@@ -46,7 +46,6 @@ const ClassList = () => {
     setCurrentIndex((prevIndex) => (prevIndex === classes.length - 1 ? 0 : prevIndex + 1));
   };
 
-  console.log(classes);
   return (
     <div className="container">
       <h2 className="text-center mt-5">Welcome to Swimming Class</h2>
