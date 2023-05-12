@@ -13,7 +13,7 @@ export const getBookings = createAsyncThunk(
     });
     const bookings = await response.json();
     return bookings;
-  }
+  },
 );
 export const postBooking = createAsyncThunk(
   'bookings/postBooking',
@@ -28,7 +28,7 @@ export const postBooking = createAsyncThunk(
     });
     const reservations = await response.json();
     return reservations;
-  }
+  },
 );
 
 export const bookingsSlice = createSlice({
