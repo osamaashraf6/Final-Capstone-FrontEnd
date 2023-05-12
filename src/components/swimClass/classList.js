@@ -8,18 +8,20 @@ const ClassList = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    fetch('https://rails-wout.onrender.com/swim_classes')
+    fetch('https://rails-i4jr.onrender.com/swim_classes')
       .then((response) => response.json())
       .then((data) => setClasses(data));
   }, [currentIndex, count]);
 
   const goToPrevSlide = () => {
     if (currentIndex === 0) return;
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? classes.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? classes.length - 1 : prevIndex - 1
+    );
   };
 
   const handleDelete = (id) => {
-    fetch(`https://rails-wout.onrender.com/swim_classes/${id}`, {
+    fetch(`https://rails-i4jr.onrender.com/swim_classes/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +43,9 @@ const ClassList = () => {
 
   const goToNextSlide = () => {
     if (currentIndex === Math.floor((classes.length - 1) / 2)) return;
-    setCurrentIndex((prevIndex) => (prevIndex === classes.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === classes.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -62,8 +66,8 @@ const ClassList = () => {
                 <Link to={`/swimClass/${swimClass.id}`}>
                   <img
                     src={
-                      swimClass.image
-                      || 'https://i.postimg.cc/rmgZkkPK/havuz-izolasyonu.jpg'
+                      swimClass.image ||
+                      'https://i.postimg.cc/rmgZkkPK/havuz-izolasyonu.jpg'
                     }
                     alt={swimClass.name}
                   />

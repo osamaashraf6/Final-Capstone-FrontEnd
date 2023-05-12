@@ -8,7 +8,7 @@ const ClassDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://rails-wout.onrender.com/swim_classes/${id}`)
+    fetch(`https://rails-i4jr.onrender.com/swim_classes/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data))
       .catch((err) => console.log(err));
@@ -30,10 +30,7 @@ const ClassDetails = () => {
           />
           <div className="details">
             <h3>{item.name}</h3>
-            <div className="bg-light">
-              $
-              {item.fee}
-            </div>
+            <div className="bg-light">${item.fee}</div>
             <div>{item.location}</div>
             <div className="bg-light">
               {item.booked ? 'Booked' : 'Not Booked Yet'}
