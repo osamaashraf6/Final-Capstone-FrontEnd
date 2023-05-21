@@ -27,14 +27,14 @@ const Bookings = () => {
   return (
     <>
       <section className="bookings">
-        <h1>RESERVATION LISTS</h1>
+        <h1>Reservations</h1>
         <table className="bookings-list">
           <thead className="thead">
             <tr>
-              <th>CLASS</th>
-              <th>description</th>
-              <th>location</th>
-              <th>MONTHLY FEE</th>
+              <th>Class</th>
+              <th>Description</th>
+              <th>Location</th>
+              <th>Monthly Fee</th>
             </tr>
           </thead>
           <tbody className="thead">

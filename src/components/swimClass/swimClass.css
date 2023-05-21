@@ -10,6 +10,12 @@
   margin: 10px 30px;
   padding: 30px;
   border: 1px solid #ccc;
+  border-radius: 10%;
+  background-color: #97bf0f;
+}
+
+.class-item:hover {
+  background-color: #fff;
 }
 
 .class-item img {
@@ -36,6 +42,8 @@
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  background-color: green;
+  color: #ccc;
 }
 
 .carousel-prev-btn {

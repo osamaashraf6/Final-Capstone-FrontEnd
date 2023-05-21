@@ -57,7 +57,7 @@ const ClassCreate = () => {
 
           <input
             type="text"
-            placeholder="description"
+            placeholder="Description"
             name="classDescription"
             className="form-input"
             value={classDescription}
@@ -67,7 +67,7 @@ const ClassCreate = () => {
 
           <input
             type="number"
-            placeholder="fee"
+            placeholder="Fee"
             name="classFee"
             className="form-input"
             value={classFee}

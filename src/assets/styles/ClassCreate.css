@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  color: #fff;
 }
 
 .form-container {
@@ -30,7 +31,8 @@
 }
 
 input {
-  width: 90%;
+  min-height: 5vh;
+  width: 80%;
   border-radius: 10px;
   outline: 1px solid #97bf0f;
   border: none;
@@ -38,14 +40,13 @@ input {
   margin-bottom: 5px;
 }
 
-::placeholder {
-  font-size: 0.9rem;
-  padding-left: 5px;
+input::placeholder {
+  font-size: 1.25rem;
 }
 
-input[type='text'] {
+input {
   font-size: 0.9rem;
-  padding-left: 10px;
+  padding: 15px;
 }
 
 .form-button {
@@ -59,7 +60,7 @@ input[type='text'] {
   text-align: center;
 }
 
-.form-button:active {
+.form-button:hover {
   background-color: green;
   transition: all 0.3s ease-in-out;
 }
