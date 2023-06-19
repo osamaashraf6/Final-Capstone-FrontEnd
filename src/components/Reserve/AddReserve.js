@@ -31,7 +31,7 @@ const AddReservation = () => {
       } catch (error) {
         console.error('Failed to create user', error);
       }
-      navigate('/reserve');
+      navigate('/reservations');
     }
   };
 
