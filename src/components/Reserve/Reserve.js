@@ -15,7 +15,7 @@ const Bookings = () => {
   }, [dispatch, id]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:3000/swim_classes')
+    fetch('https://rails-i4jr.onrender.com/swim_classes')
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.log(err));
@@ -43,10 +43,7 @@ const Bookings = () => {
                 <td>{item.name}</td>
                 <td>{item.description}</td>
                 <td>{item.location}</td>
-                <td>
-                  {item.fee}
-                  $
-                </td>
+                <td>{item.fee}$</td>
               </tr>
             ))}
           </tbody>

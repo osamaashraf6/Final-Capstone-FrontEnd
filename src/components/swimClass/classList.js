@@ -9,7 +9,7 @@ const ClassList = () => {
   const asterisks = '* '.repeat(30);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:3000/swim_classes')
+    fetch('https://rails-i4jr.onrender.com/swim_classes')
       .then((response) => response.json())
       .then((data) => setClasses(data));
   }, []);
