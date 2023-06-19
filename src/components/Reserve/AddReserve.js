@@ -21,7 +21,7 @@ const AddReservation = () => {
       navigate('/signup');
     } else {
       try {
-        fetch('https://rails-i4jr.onrender.com/bookings', {
+        fetch('http://127.0.0.1:3000/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

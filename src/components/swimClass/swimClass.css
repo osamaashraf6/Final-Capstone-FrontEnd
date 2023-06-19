@@ -1,57 +1,54 @@
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  margin-top: 50px;
-}
-
-.class-item {
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  margin: 10px 30px;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-radius: 10%;
-  background-color: #97bf0f;
-}
-
-.class-item:hover {
-  background-color: #fff;
-}
-
-.class-item img {
-  width: 350px;
-  margin-bottom: 20px;
-}
-
-.carousel-list {
+.classes-container {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.carousel-list p {
-  color: #ccc;
-}
-
-.carousel-item {
-  flex: 0 0 100%;
-}
-
-.carousel-prev-btn,
-.carousel-next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.classes-container .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 0;
+  width: 2em;
+  height: 2em;
+  background-color: #97bf0f;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
-  background-color: green;
-  color: #ccc;
 }
 
-.carousel-prev-btn {
-  left: 10px;
+.classes-container button > * {
+  color: #fff;
 }
 
-.carousel-next-btn {
-  right: 60px;
+.classes {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.classes li {
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 20px;
+  list-style: none;
+}
+
+.classes li img {
+  object-fit: contain;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.classes li .asterisks {
+  padding: 0 2px;
+  height: 20px;
+  overflow: hidden;
 }
 
 .item-details img {
@@ -69,4 +66,33 @@
 
 .btn-success {
   background-color: #97bf0f !important;
+  border-color: #97bf0f !important;
+}
+
+.btn-success:hover {
+  background-color: aqua !important;
+  color: black !important;
+}
+.btn-success:hover a {
+  color: black !important;
+}
+
+.green {
+  color: #97bf0f;
+}
+
+.circle {
+  background-color: #97bf0f;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 1rem 0 0;
+}
+
+.detail-btn > * {
+  text-decoration: none;
+}
+
+.detail-btn:first-child :hover {
+  color: #fff;
 }

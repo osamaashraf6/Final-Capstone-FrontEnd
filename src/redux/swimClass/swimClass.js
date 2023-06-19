@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const classURL = 'https://rails-i4jr.onrender.com/swim_classes';
+const classURL = 'http://127.0.0.1:3000/swim_classes';
 
 export const getSwimClasses = createAsyncThunk(
   'swimClasses/getSwimClasses',

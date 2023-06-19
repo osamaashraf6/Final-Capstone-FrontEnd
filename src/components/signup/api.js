@@ -1,4 +1,4 @@
-const BASE_URL = 'https://rails-i4jr.onrender.com';
+const BASE_URL = 'http://127.0.0.1:3000';
 
 export const signUp = async (email, password, passwordConfirmation) => {
   const response = await fetch(`${BASE_URL}/users`, {

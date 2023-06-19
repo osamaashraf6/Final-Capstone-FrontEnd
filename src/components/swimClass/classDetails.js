@@ -8,7 +8,7 @@ const ClassDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://rails-i4jr.onrender.com/swim_classes/${id}`)
+    fetch(`http://127.0.0.1:3000/swim_classes/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data))
       .catch((err) => console.log(err));
