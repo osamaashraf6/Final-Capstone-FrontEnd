@@ -3,12 +3,14 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { postClass, getSwimClasses } from '../../redux/swimClass/swimClass';
 import '../../assets/styles/ClassCreate.css';
+import images from '../../assets/images/images';
 
 const ClassCreate = () => {
   const [className, setClassName] = useState('');
   const [classLocation, setClassLocation] = useState('');
   const [classFee, setClassFee] = useState('');
   const [classDescription, setClassDescription] = useState('');
+  let pointer = parseInt(JSON.parse(localStorage.getItem('pointer')) || 0, 10);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -18,12 +20,15 @@ const ClassCreate = () => {
     const classData = {
       name: className,
       location: classLocation,
+      image: images[pointer],
       fee: classFee,
       description: classDescription,
     };
     dispatch(postClass(classData));
     dispatch(getSwimClasses());
     navigate('/swimClass');
+    if (pointer === 4) pointer = 0;
+    else JSON.stringify(localStorage.setItem('pointer', pointer + 1));
   };
 
   const screen = (

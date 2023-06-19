@@ -7,7 +7,6 @@ const ClassList = () => {
   const [classes, setClasses] = useState([]);
   const [index, setIndex] = useState(0);
   const asterisks = '* '.repeat(30);
-  const imgURL = 'https://i.postimg.cc/rmgZkkPK/havuz-izolasyonu.jpg';
 
   useEffect(() => {
     fetch('http://127.0.0.1:3000/swim_classes')
@@ -45,7 +44,7 @@ const ClassList = () => {
           <ul className="classes">
             {filt.map((swimClass) => (
               <li key={swimClass.id}>
-                <img src={swimClass.image || imgURL} alt={swimClass.name} />
+                <img src={swimClass.image} alt={swimClass.name} />
                 <h4 className="text-center m-3">{swimClass.name}</h4>
                 <div className="asterisks">
                   <p className="text-center text-muted">{asterisks}</p>
@@ -95,33 +94,3 @@ const ClassList = () => {
   );
 };
 export default ClassList;
-
-/*
-const handleDelete = (id) => {
-    fetch(`http://127.0.0.1:3000/swim_classes/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          setCurrentIndex(0);
-          setCount(classes.length);
-        } else {
-          console.error('Failed to delete SwimClass:', response.status);
-        }
-      })
-      .catch((error) => {
-        console.error('Error deleting SwimClass:', error);
-      });
-  };
-
- <button
-                type="button"
-                className="btn btn-danger"
-                onClick={() => handleDelete(swimClass.id)}
-              >
-                Delete class
-              </button>
-*/

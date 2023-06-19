@@ -51,19 +51,6 @@
   overflow: hidden;
 }
 
-.item-details img {
-  width: 500px;
-}
-
-.details {
-  margin-left: 200px;
-}
-
-.details div {
-  padding: 10px;
-  width: 200px;
-}
-
 .btn-success {
   background-color: #97bf0f !important;
   border-color: #97bf0f !important;
@@ -73,6 +60,7 @@
   background-color: aqua !important;
   color: black !important;
 }
+
 .btn-success:hover a {
   color: black !important;
 }
@@ -89,10 +77,20 @@
   margin: 0 1rem 0 0;
 }
 
+.details {
+  max-width: 40%;
+}
+
 .detail-btn > * {
   text-decoration: none;
 }
 
 .detail-btn:first-child :hover {
   color: #fff;
+}
+
+.img-detail {
+  width: 50%;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 }
