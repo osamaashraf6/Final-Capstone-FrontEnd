@@ -18,6 +18,10 @@
   cursor: pointer;
 }
 
+.detail-btn > * {
+  text-decoration: none;
+}
+
 .classes-container button > * {
   color: #fff;
 }
@@ -79,10 +83,6 @@
 
 .details {
   max-width: 40%;
-}
-
-.detail-btn > * {
-  text-decoration: none;
 }
 
 .detail-btn:first-child :hover {

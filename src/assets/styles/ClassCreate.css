@@ -36,17 +36,13 @@ input {
   border-radius: 10px;
   outline: 1px solid #97bf0f;
   border: none;
-  padding: 3px;
   margin-bottom: 5px;
+  font-size: 0.9rem;
+  padding: 15px;
 }
 
 input::placeholder {
   font-size: 1.25rem;
-}
-
-input {
-  font-size: 0.9rem;
-  padding: 15px;
 }
 
 .form-button {
