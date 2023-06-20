@@ -27,7 +27,7 @@ const ClassCreate = () => {
     dispatch(postClass(classData));
     dispatch(getSwimClasses());
     navigate('/swimClass');
-    if (pointer === 4) pointer = 0;
+    if (pointer === 4) JSON.stringify(localStorage.setItem('pointer', 0));
     else JSON.stringify(localStorage.setItem('pointer', pointer + 1));
   };
 
