@@ -12,7 +12,7 @@ const ClassCreate = () => {
   const [classDescription, setClassDescription] = useState('');
   const pointer = parseInt(
     JSON.parse(localStorage.getItem('pointer')) || 0,
-    10
+    10,
   );
 
   const navigate = useNavigate();
