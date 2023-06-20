@@ -63,7 +63,7 @@ const ClassList = () => {
                   </div>
                 </div>
                 <h5 className="text-center m-3">
-                  Price:
+                  Fee:
                   <span className="green">{` $${swimClass.fee}`}</span>
                 </h5>
                 <p className="text-center mb-0">{swimClass.description}</p>
