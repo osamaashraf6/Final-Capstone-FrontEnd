@@ -10,7 +10,10 @@ const ClassCreate = () => {
   const [classLocation, setClassLocation] = useState('');
   const [classFee, setClassFee] = useState('');
   const [classDescription, setClassDescription] = useState('');
-  const pointer = parseInt(JSON.parse(localStorage.getItem('pointer')) || 0, 10);
+  const pointer = parseInt(
+    JSON.parse(localStorage.getItem('pointer')) || 0,
+    10
+  );
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
