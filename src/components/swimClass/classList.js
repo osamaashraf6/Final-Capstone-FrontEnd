@@ -4,7 +4,7 @@ import * as FaIcons from 'react-icons/fa';
 import Loading from '../loading';
 
 const ClassList = () => {
-  const [classes, setClasses] = useState([]);
+  const [classes, setClasses] = useState(null);
   const [index, setIndex] = useState(0);
   const asterisks = '* '.repeat(30);
 
@@ -24,7 +24,8 @@ const ClassList = () => {
     setIndex(index + 1);
   };
 
-  const filt = classes.length >= 3 ? classes.slice(index, index + 3) : classes;
+  let filtered = null;
+  filtered = classes && classes.length >= 3 ? classes.slice(index, index + 3) : classes;
 
   return (
     <div className="container overflow-auto mb-5">
@@ -32,17 +33,17 @@ const ClassList = () => {
       <h4 className="text-center my-5">
         Make a splash with our swimming classes!
       </h4>
-      {!filt && <Loading message="Loading..." />}
-      {filt && filt.length === 0 && (
+      {!filtered && <Loading message="Loading..." />}
+      {filtered && filtered.length === 0 && (
         <Loading message="You have no swimming classes yet!" />
       )}
-      {filt && filt.length !== 0 && (
+      {filtered && filtered.length !== 0 && (
         <div className="classes-container">
           <button className="arrow" type="button" onClick={() => left()}>
             <FaIcons.FaArrowLeft />
           </button>
           <ul className="classes">
-            {filt.map((swimClass) => (
+            {filtered.map((swimClass) => (
               <li key={swimClass.id}>
                 <img src={swimClass.image} alt={swimClass.name} />
                 <h4 className="text-center m-3">{swimClass.name}</h4>
