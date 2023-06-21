@@ -21,7 +21,7 @@ const AddReservation = () => {
       navigate('/signup');
     } else {
       try {
-        fetch('http://localhost:3000/bookings', {
+        fetch('https://rails-i4jr.onrender.com/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const AddReservation = () => {
       } catch (error) {
         console.error('Failed to create user', error);
       }
-      navigate('/reserve');
+      navigate('/reservations');
     }
   };
 

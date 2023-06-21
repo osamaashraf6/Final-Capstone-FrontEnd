@@ -14,7 +14,7 @@ const links = [
   },
   {
     id: 3,
-    title: 'MY RESERVATIONS',
+    title: 'RESERVATIONS',
     path: 'reservations',
   },
   {

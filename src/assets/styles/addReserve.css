@@ -17,9 +17,11 @@
   font-size: 2rem;
   text-align: center;
   font-style: bold;
+  color: #fff;
 }
 
 #city {
+  display: none;
   background-color: #97bf0f;
   border: 1px solid #fff;
   border-radius: 2rem;
@@ -57,13 +59,22 @@
   margin-left: 0;
 }
 
+#btn:hover {
+  background-color: green;
+}
+
 .about-class {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
   padding: 1rem;
-  color: #cec2c2;
+  color: #fff;
   font-weight: 700;
   font-family: sans-serif;
+}
+
+.reserve-form {
+  display: flex;
+  justify-content: center;
 }

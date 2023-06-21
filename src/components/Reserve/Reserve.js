@@ -6,15 +6,16 @@ import '../../assets/styles/Bookings.css';
 const Bookings = () => {
   const dispatch = useDispatch();
   const { bookings } = useSelector((state) => state.bookings);
-  const { id } = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user'));
   const [items, setItems] = useState([]);
+  const id = user ? user.id : 0;
 
   useEffect(() => {
     dispatch(getBookings(id));
   }, [dispatch, id]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/swim_classes')
+    fetch('https://rails-i4jr.onrender.com/swim_classes')
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.log(err));
@@ -26,14 +27,14 @@ const Bookings = () => {
   return (
     <>
       <section className="bookings">
-        <h1>RESERVATION LISTS</h1>
+        <h1>Reservations</h1>
         <table className="bookings-list">
           <thead className="thead">
             <tr>
-              <th>CLASS</th>
-              <th>description</th>
-              <th>location</th>
-              <th>MONTHLY FEE</th>
+              <th>Class</th>
+              <th>Description</th>
+              <th>Location</th>
+              <th>Monthly Fee</th>
             </tr>
           </thead>
           <tbody className="thead">
