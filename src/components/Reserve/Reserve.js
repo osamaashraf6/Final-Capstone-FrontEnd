@@ -43,7 +43,10 @@ const Bookings = () => {
                 <td>{item.name}</td>
                 <td>{item.description}</td>
                 <td>{item.location}</td>
-                <td>{item.fee}$</td>
+                <td>
+                  {item.fee}
+                  $
+                </td>
               </tr>
             ))}
           </tbody>
