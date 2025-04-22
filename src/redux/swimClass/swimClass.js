@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const classURL = 'http://127.0.0.1:3000/swim_classes';
+const classURL = 'https://rails-kicq.onrender.com/swim_classes';
 
 export const getClasses = createAsyncThunk(
   'swimClasses/getSwimClasses',
@@ -14,7 +14,7 @@ export const getClasses = createAsyncThunk(
     });
     const swimClasses = await response.json();
     return swimClasses;
-  },
+  }
 );
 
 export const deleteClass = createAsyncThunk(
@@ -32,7 +32,7 @@ export const deleteClass = createAsyncThunk(
     } catch (e) {
       return e.errors;
     }
-  },
+  }
 );
 
 export const postClass = createAsyncThunk(
@@ -51,7 +51,7 @@ export const postClass = createAsyncThunk(
       }
       throw new Error('Something went wrong');
     });
-  },
+  }
 );
 export const updateClass = createAsyncThunk(
   'swimClasses/updateClass',
@@ -69,7 +69,7 @@ export const updateClass = createAsyncThunk(
       }
       throw new Error('Something went wrong');
     });
-  },
+  }
 );
 
 export const swimClassesSlice = createSlice({
@@ -85,7 +85,7 @@ export const swimClassesSlice = createSlice({
       ...state,
       status: 'success',
       swimClasses: state.swimClasses.filter(
-        (swimClass) => swimClass.id !== action.payload,
+        (swimClass) => swimClass.id !== action.payload
       ),
     }));
     builder.addCase(deleteClass.pending, (state) => ({

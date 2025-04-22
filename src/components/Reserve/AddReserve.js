@@ -19,7 +19,7 @@ const AddReservation = () => {
     if (!user) navigate('/signup');
     else {
       try {
-        fetch('http://127.0.0.1:3000/bookings', {
+        fetch('https://rails-kicq.onrender.com/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
