@@ -7,13 +7,13 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   margin: 0 5px;
 }
 
 .create-section h1 {
   align-items: center;
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -22,7 +22,7 @@
 
 .form-container {
   align-items: center;
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -34,7 +34,7 @@ input {
   min-height: 5vh;
   width: 80%;
   border-radius: 10px;
-  outline: 1px solid #97bf0f;
+  outline: 1px solid var(--green-accent);
   border: none;
   margin-bottom: 5px;
   font-size: 0.9rem;
@@ -46,7 +46,7 @@ input::placeholder {
 }
 
 .form-button {
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   border: 1px solid #fff;
   border-radius: 2rem;
   color: #fff;

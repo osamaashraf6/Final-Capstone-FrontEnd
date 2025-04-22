@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { postClass, getSwimClasses } from '../../redux/swimClass/swimClass';
+import { postClass, getClasses } from '../../redux/swimClass/swimClass';
 import '../../assets/styles/ClassCreate.css';
 import images from '../../assets/images/images';
 
@@ -28,7 +28,7 @@ const ClassCreate = () => {
       description: classDescription,
     };
     dispatch(postClass(classData));
-    dispatch(getSwimClasses());
+    dispatch(getClasses());
     navigate('/swimClass');
     if (pointer === 4) JSON.stringify(localStorage.setItem('pointer', 0));
     else JSON.stringify(localStorage.setItem('pointer', pointer + 1));

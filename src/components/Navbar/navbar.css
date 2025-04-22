@@ -36,7 +36,7 @@ nav ul {
 }
 
 .link .active {
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   color: #fff;
 }
 

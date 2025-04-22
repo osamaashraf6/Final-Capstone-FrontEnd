@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const getBookings = createAsyncThunk(
   'bookings/getBookings',
   async () => {
-    const response = await fetch('https://rails-i4jr.onrender.com/bookings', {
+    const response = await fetch('http://127.0.0.1:3000/bookings', {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -18,7 +18,7 @@ export const getBookings = createAsyncThunk(
 export const postBooking = createAsyncThunk(
   'bookings/postBooking',
   async (data) => {
-    const response = await fetch('https://rails-i4jr.onrender.com/bookings', {
+    const response = await fetch('http://127.0.0.1:3000/bookings', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

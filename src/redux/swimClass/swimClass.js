@@ -1,9 +1,8 @@
-/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const classURL = 'https://rails-i4jr.onrender.com/swim_classes';
+const classURL = 'http://127.0.0.1:3000/swim_classes';
 
-export const getSwimClasses = createAsyncThunk(
+export const getClasses = createAsyncThunk(
   'swimClasses/getSwimClasses',
   async () => {
     const response = await fetch(classURL, {
@@ -110,16 +109,16 @@ export const swimClassesSlice = createSlice({
       ...state,
       status: 'failed',
     }));
-    builder.addCase(getSwimClasses.fulfilled, (state, action) => ({
+    builder.addCase(getClasses.fulfilled, (state, action) => ({
       ...state,
       status: 'success',
       swimClasses: action.payload,
     }));
-    builder.addCase(getSwimClasses.pending, (state) => ({
+    builder.addCase(getClasses.pending, (state) => ({
       ...state,
       status: 'loading',
     }));
-    builder.addCase(getSwimClasses.rejected, (state) => ({
+    builder.addCase(getClasses.rejected, (state) => ({
       ...state,
       status: 'failed',
     }));

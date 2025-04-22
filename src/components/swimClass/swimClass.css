@@ -12,10 +12,17 @@
   margin: 0;
   width: 2em;
   height: 2em;
-  background-color: #97bf0f;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.arrow-green {
+  background-color: var(--green-accent);
+}
+
+.arrow-gray {
+  background-color: #ccc;
 }
 
 .detail-btn > * {
@@ -56,8 +63,8 @@
 }
 
 .btn-success {
-  background-color: #97bf0f !important;
-  border-color: #97bf0f !important;
+  background-color: var(--green-accent) !important;
+  border-color: var(--green-accent) !important;
 }
 
 .btn-success:hover {
@@ -70,11 +77,11 @@
 }
 
 .green {
-  color: #97bf0f;
+  color: var(--green-accent);
 }
 
 .circle {
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -89,8 +96,21 @@
   color: #fff;
 }
 
+.no-class {
+  text-align: center;
+  margin: 20vh 0;
+}
+
 .img-detail {
-  width: 50%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
   border-radius: 20px;
   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hover-danger:hover {
+  color: #fff !important;
+  background-color: red !important;
 }

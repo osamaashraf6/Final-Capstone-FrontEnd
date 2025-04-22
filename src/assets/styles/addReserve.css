@@ -4,7 +4,7 @@
   gap: 1rem;
   width: 100%;
   padding: 1rem;
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   color: #cec2c2;
 }
 
@@ -22,7 +22,7 @@
 
 #city {
   display: none;
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   border: 1px solid #fff;
   border-radius: 2rem;
   color: #fff;
@@ -42,11 +42,11 @@
 
 #city:hover {
   background-color: #fff;
-  color: #97bf0f;
+  color: var(--green-accent);
 }
 
 #btn {
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
   border: 1px solid #fff;
   border-radius: 2rem;
   color: #fff;

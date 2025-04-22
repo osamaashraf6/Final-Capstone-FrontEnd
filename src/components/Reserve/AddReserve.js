@@ -16,12 +16,10 @@ const AddReservation = () => {
 
   const createReserve = (event) => {
     event.preventDefault();
-    if (!user) {
-      alert('Please Sign In or Sign Up First');
-      navigate('/signup');
-    } else {
+    if (!user) navigate('/signup');
+    else {
       try {
-        fetch('https://rails-i4jr.onrender.com/bookings', {
+        fetch('http://127.0.0.1:3000/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -29,7 +27,7 @@ const AddReservation = () => {
           body: JSON.stringify({ user_id: user.id, swim_class_id: id }),
         });
       } catch (error) {
-        console.error('Failed to create user', error);
+        throw new Error('Failed to create reservation');
       }
       navigate('/reservations');
     }

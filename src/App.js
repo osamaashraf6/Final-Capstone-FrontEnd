@@ -24,10 +24,7 @@ const App = () => (
           <Route path="add-class" element={<ClassCreate />} />
           <Route path="swimClass/:id" element={<ClassDetails />} />
           <Route path="reservations" element={<Bookings />} />
-          <Route
-            path="swimClass/:id/addReserve"
-            element={<AddReservation />}
-          />
+          <Route path="swimClass/:id/addReserve" element={<AddReservation />} />
           <Route path="signup" element={<Authentication />} />
         </Routes>
       </div>

@@ -9,7 +9,7 @@
   background-size: cover;
   background-position: bottom;
   color: white;
-  background-color: #97bf0f;
+  background-color: var(--green-accent);
 }
 
 .bookings h1 {

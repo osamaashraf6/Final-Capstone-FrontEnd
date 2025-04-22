@@ -15,10 +15,10 @@ const Bookings = () => {
   }, [dispatch, id]);
 
   useEffect(() => {
-    fetch('https://rails-i4jr.onrender.com/swim_classes')
+    fetch('http://127.0.0.1:3000/swim_classes')
       .then((res) => res.json())
       .then((data) => setItems(data))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   }, []);
   const ids = [];
   bookings.forEach((book) => ids.push(book.bookingClassId));
